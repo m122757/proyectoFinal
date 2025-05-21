@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Menu Json' %></title>
+     <link rel="stylesheet" href="/estilos.css">
+    </head>
+<body>
+     <h1 align="center"><%= nombre %></h1>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#Historia">Historia</a></li>
+                <li><a href="#JSON">JSON</a></li>
+                <li><a href="#Estructura">Estructura</a></li>
+                <li><a href="#Ejemplos">Ejemplos</a></li>
+            </ul>
+        </nav><section id="Historia">
+            <h2>Historia</h2>
+            <p>Su historia se remonta a principios de la década de 2000,
+                cuando Douglas Crockford identificó la necesidad de
+                contar con un formato simple y menos engorroso
+                que XML para la transmisión de datos entre sistemas.
+
+                Crockford tomó la idea de utilizar una sintaxis basada
+                 en un subconjunto de JavaScript, dado que ya era muy 
+                 familiar para los desarrolladores, y definió JSON como 
+                 un formato sencillo de leer y escribir, tanto para humanos
+                como para máquinas.<br>
+
+                
+
+            </p>
+        </section>
+        <section id="JSON">
+            <h2>JSON</h2>
+            <ul>
+                <li><strong>JSON:</strong> su nombre se lee igual que jason // es un estandar para enviar y recibir 
+                    datos entre un servidor y el navegador que puede utilizarse para el intercambio
+                    entre una o dos aplicaciones. Es sencillo de leer por las personas y facil de manejar 
+                    en distintos ambitos.JSON se enfoca en enviar y recibir datos mediante funciones que los pasan a formatos JSON
+                    y luego lo reconvierte desde dicho estandar.
+                    
+                    se puede trabajar desde un comienzo en json o escribirlo en objetos en JavaScript y permitir
+                    soporte nativo , la manipulacion, el parseo y el envio de datos atraves de de JSON
+                     .</li>
+                     <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+                
+            </ul>
+        </section>
+        <section id="Estructura">
+            <h2>Estructura</h2>
+            <p>Tipos de datos en JSON<br><br>
+                <b>Cadenas </b>: se escriben entre comillas dobles.<br>
+                <b>Números</b>: se usar simples números, ya sean números enteros (4) como números reales (1.8).<br>
+                <b>Booleanos</b>: los valores true, false . Estos valores se escriben sin comillas.<br>
+                <b>Objetos JSON</b>:  comienza y termina con llaves {}.<br>
+                <b>Arrays</b>:son simples colecciones de elementos dentro []. Estos elementos pueden ser datos como números o cadenas pero también otros arreglos u objetos JSON.
+                son listas de valores separados por comas","<br>
+                <b> null</b>: se escriben sin comillas<br><br>
+                <p>
+             
+                    declaracion de numeros en json:<br><br>
+                {<br>
+                    "numero": 5<br>
+                }<br><br>
+                declaracion de cadenas en json:<br><br>
+                {<br>
+                    "mensaje": "Hola, mundo"<br>
+                }<br>
+                  
+                declaracion de Booleanos en json:<br><br>
+                {<br>
+                    "esActivo": true,<br>
+                    "esAdmin": false<br>
+                }<br>
+                declaracion de Objetos en json:<br><br>
+                {<br>
+                    "libro": {<br>
+                      "titulo": "La Laguna Azul",<br>
+                      "autor": "Henry de Vere Stacpoole",<br>
+                     
+                    }<br>
+                }<br><br>
+                declaracion de Arrays en json<br>
+                {<br>
+                    "vocales": ["a", "e", "i","o","u"]<br>
+                }<br><br>
+                </p>
+                Lo que tenemos que tener claro es que se trata de un sistema que está basado en el principio de “clave-valor”
+                y que para asignar un valor a una clave, deberemos utilizar los dos puntos (:).
+                <br><br>
+                Ejemplo:<br>
+                
+            [ { "id": 1,<br>
+             "nombre": "Camiseta",<br>
+              "precio": 15.99,<br>
+               "stock": 50 },<br>
+                { 'id': 2, <br>
+                'nombre': 'Pantalón',<br>
+                 'precio': 29.99, 'stock': 30 } <br>
+            ]<br>
+
+                <br><br>
+                
+                
+                <b>El proceso de "ejecución" de JSON depende de cómo se utiliza:</b><br><br>
+               <b>Visualización</b> :<br><br>
+            Para ver un archivo JSON, puedes simplemente abrirlo con un editor de texto(Visual Studio Code, Notepad++, Sublime Text, etc) o una herramienta específica para visualizar JSON (como un plugin de navegador o un editor de código). 
+            Estas herramientas suelen formatear el JSON de forma legible, con sangría y colores para facilitar la lectura
+            JSON no se ejecuta como un programa, sino que se utiliza como un formato
+            de datos que se puede visualizar, acceder y manipular programáticamente. 
+            la sintaxis que se utiliza para su creación.<br><br>
+            Librerías populares de lenguajes de programación tales como:<br><br>                
+
+                En JavaScript podemos usar las funciones JSON.parse()
+                 y JSON.stringify() para interpretar cadenas de texto en JSON y
+                 para serializar datos en archivos .JSON. y  en la consola de HTML,
+                puedes utilizar el método console.log(). Simplemente pasa el 
+                objeto JSON como argumento al método console.log()
+                y se mostrará en la consola del navegador con un formato legible
+                Abre la consola de desarrollador de tu navegador presionando F12
+                 o Ctrl+Shift+I para ver el JSON mostrado.<br><br>
+
+                 console.log(JSON.stringify({ x: 2, y: 4 }));<br>
+                 // salida: '{"x":2,"y":4}'<br><br>
+                 JSON.stringify({ a: 4}, null, " ");<br>
+                 // regresa la cadena de texto:<br>
+                 // '{<br>
+                 //  "a": 4<br>
+                 // }'<br><br>
+                    objeto JSON<br><br>
+                 const miObjetoJSON = {<br>
+                    nombre: "Mirian",<br>
+                    edad: 56,<br>
+                    ciudad: "Santiago "<br>
+                 };<br><br>
+
+                  Para Mostrar en consola se usa:<br><br>
+                  console.log(miObjetoJSON);<br><br>
+                  en la consola se mostrara:<br><br>
+                  {<br>
+                    "nombre": "Miriam",<br>
+                    "edad": 56,<br>
+                    "ciudad": "Santiago"<br>
+                  }<br>
+              <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+                </p>
+        </section>
+        <section id="Ejemplos">
+            <h2>Ejemplos</h2>
+
+            <b> Ejemplo usando todos los tipos de json</b><br><br>
+            {<br>
+                "cadena": "Hola, mundo",<br>
+                "array": ["manzana", "banana", "cereza"],<br>
+                "numero": 42,<br>
+                "objeto": {<br>
+                  "nombre": "Juan",<br>
+                  "edad": 30,<br>
+                  "trabaja": true<br>
+                },<br>
+                "booleano": false<br>
+              }<br><br>
+              
+        </p>
+           
+            
+              
+            listado de escuelas con sus nombres y el número 
+            de docentes de cada una de ellas.<br>
+            Escuela1 tiene 100 docente<br>
+            Escuela2 tiene 150 docente<br>
+            Escuela3 tiene 200 trabajadores<br><br>
+            <textarea id="bienFor">
+                {
+                    “Escuela”: [
+                    {“NombreEscuela”:”Escuela1”, “NumDocentes”:100},
+                    {“NombreEscuela”:”Escuela2”, “NumDocentes”:150},
+                    {“NombreEscuela”:”Escuela3”, “NumDocentes”:200},
+                    ]
+                }
+            </textarea>
+            <h3>Ejemplo de Menu</h3>
+            <textarea id="menu">
+                {
+                    "menu": {
+                      "titulo": "Menú Principal",
+                      "opciones": [
+                        {
+                          "nombre": "Inicio",
+                          "enlace": "/inicio"
+                        },
+                        {
+                          "nombre": "Productos",
+                          "enlace": "/productos"
+                        },
+                        {
+                          "nombre": "Servicios",
+                          "enlace": "/servicios"
+                        },
+                        {
+                          "nombre": "Contacto",
+                          "enlace": "/contacto"
+                        }
+                      ]
+                    }
+                  }
+                  
+            </textarea>
+<a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+        </p>
+               
+        </section>
+    </main>
+    <footer>
+    
+    </footer>
+</body>
+</html>

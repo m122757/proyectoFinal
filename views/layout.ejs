@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/estilos.css">
+  </head>
+  <body>
+    
+      <nav>
+        <ul>
+          <li class="<%= activePage === 'inicio' ? 'active' : '' %>">
+            <a href="/">Inicio</a>
+          </li>
+          <li class="<%= activePage === 'horario_clase' ? 'active' : '' %>">
+            <a href="/horario_clase">Acerca De Mi</a>
+          </li>          
+          <li class="<%= activePage === '/etiquetas' ? 'active' : '' %>">
+            <a href="/etiquetas">Etiquetas</a>
+          </li>
+           
+          <li class="<%= activePage === 'menujson' ? 'active' : '' %>">
+            <a href="/menuJson">JSON</a>
+          </li>  
+           <li class="<%= activePage === 'ResXml' ? 'active' : '' %>">
+            <a href="/ResXml">XML</a>
+          </li>    
+           <li class="<%= activePage === 'ResAjax' ? 'active' : '' %>">
+            <a href="/ResAjax">AJAX</a>
+          </li> 
+            <li class="<%= activePage === 'mvc' ? 'active' : '' %>">
+            <a href="/mvc">MVC</a>
+          </li>  
+          </li> 
+            <li class="<%= activePage === 'spring' ? 'active' : '' %>">
+            <a href="/spring">Spring Framework</a>
+          </li> 
+           <li class="<%= activePage === 'jsoChart' ? 'active' : '' %>">
+            <a href="/jsoChart">GRafico json</a>
+          </li>      
+        </ul>
+      </nav>
+      
+    
+    <main>
+      <!-- Aquí se inyecta el contenido específico de cada vista -->
+      <%- body %>
+    </main>
+    <footer>
+      <p>&copy; 2025 Creado por BSR</p>
+    </footer>
+  </body>
+</html>
+

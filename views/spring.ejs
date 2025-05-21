@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/estilo.css">
+</head>
+
+<body>
+    <h1 align="center">
+        <%= nombre %>
+    </h1>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#Historia">Historia</a></li>
+                <li><a href="#Springframework"> Spring Framework</a></li>
+                <li><a href="#Funcionamiento">Funcionamiento</a></li>
+                <li><a href="#Ejemplos">Ejemplos</a></li>
+            </ul>
+        </nav>
+
+        <section id="Historia">
+            <h2>Historia</h2>
+            <ol>
+
+                <p>
+                    <li>2002 </li>Spring y los diversos
+                    frameworks basados ​​en él, como Spring Boot, han llegado a
+                    dominar la forma en que los desarrolladores Java escriben código.
+                    El desarrollador Rod Johnson concibió Spring en 2002.<br><br>
+
+                    <br><br>
+                    <li>2003:</li> Rod Johnson, junto con Juergen Hoeller y Yann Caroff, iniciaron el Spring Framework
+                    como un proyecto de código abierto.
+                    tambien se lanzó la primera versión, Spring 0.9, bajo la licencia Apache 2.0.
+                    <li>Marzo de 2004:</li> Se lanzó la primera versión lista para producción, Spring 1.0.
+                    Rod Johnson fundó la compañía Interface21, que más tarde pasó a llamarse SpringSource en 2007
+                    y finalmente solo Spring.
+                    <li>Agosto de 2009: </li>VMware adquirió SpringSource por $420 millones.<br>
+
+
+                </p>
+            </ol>
+
+        </section>
+        <section id="Springframework">
+            <h2>Spring Framework</h2>
+            <ol>
+                La estructura del Spring Framework es modular y se organiza en varios módulos
+                que proporcionan diferentes funcionalidades. Esta arquitectura modular permite a los
+                desarrolladores utilizar solo los módulos que necesitan para su aplicación,
+                lo que reduce el tamaño y la complejidad de la misma.<br>
+                <br>
+
+                Los módulos principales del Spring Framework:
+                <br>
+                <li>Módulos Core (Núcleo):</li>
+
+                <b>Core Container</b> (Beans, Core, Context, SpEL): Este es el corazón del framework. Proporciona las
+                funcionalidades fundamentales como la Inyección de Dependencias (DI) y la Inversión de Control (IoC).
+                <br><br><br><b> Beans: </b>Define el manejo de los JavaBeans y la configuración de los beans.
+                <br> <b>Core: </b> Proporciona funcionalidades base como recursos, validación, eventos y conversión de
+                tipos.
+                <br><b>Context: </b> Construye sobre los módulos Core y Beans, proporcionando un entorno de ejecución
+                para las aplicaciones Spring. Define la interfaz ApplicationContext, que representa el contenedor IoC.
+                <br><b> SpEL (Spring Expression Language):</b> Un poderoso lenguaje de expresiones para manipular
+                objetos en tiempo de ejecución.
+                <br><br>
+                <li><b> Módulos de Datos</b>:</li>
+
+                <br><b> JDBC (Java Database Connectivity):</b> Proporciona soporte para la interacción con bases de
+                datos utilizando JDBC, simplificando el manejo de recursos y el manejo de excepciones.
+                <br><b> ORM (Object-Relational Mapping):</b> Ofrece integración con populares frameworks ORM como
+                Hibernate, JPA (Java Persistence API) e iBatis/MyBatis.
+                <br><b> OXM (Object/XML Mapping):</b> Soporte para la serialización y deserialización de objetos Java
+                a/desde XML. Ejemplos incluyen JAXB, Castor y XMLBeans.
+                <br><b>JMS (Java Message Service):</b> Contiene facilidades para la producción y consumo de mensajes.
+                <br><b> Transactions:</b> Proporciona una abstracción para la gestión de transacciones, soportando tanto
+                transacciones locales como globales.
+                <br><b> Data JPA:</b>Simplifica el desarrollo de aplicaciones que acceden a datos utilizando JPA.
+                <br><b> Data MongoDB, Data Redis, Data Cassandra, etc.:</b> Ofrecen integración con bases de datos NoSQL
+                populares.
+
+                <br><br>
+                <li><b>Módulos AOP (Programación Orientada a Aspectos)</b>:</li>
+
+                <br> <b>AOP:</b> Permite la implementación de preocupaciones transversales (como logging, seguridad,
+                manejo de transacciones) de forma modular, separándolas de la lógica de negocio principal.
+                <br> <b> Aspects:</b> Proporciona integración con AspectJ, otro popular framework AOP.
+
+                <br>
+                <li> <b>Módulos de Web</b>:</li>
+
+                <br> <b> Web(Servlet, WebFlux, Portlet,WebSocket)</b> Proporciona funcionalidades para el desarrollo de
+                aplicaciones web.
+                <br> <b> Servlet:</b> Soporte para la integración con contenedores Servlet (como Tomcat). Incluye el
+                framework Spring MVC para la construcción de aplicaciones web basadas en el patrón
+                Modelo-Vista-Controlador.
+                <br> <b>WebFlux:</b> Un framework reactivo para construir aplicaciones web no bloqueantes y asíncronas.
+                <br> <b> Portlet:</b>Soporte para el desarrollo de aplicaciones portlet para entornos como Liferay.
+                <br> <b> WebSocket:</b> Soporte para la comunicación bidireccional en tiempo real entre clientes y
+                servidores web.
+                <br> <b>Web Services:</b> Facilita la creación y el consumo de servicios web (SOAP, REST).
+
+                <br><br>
+                <li><b> Módulos de Integración</b>:</li>
+
+                <br> <b>Spring Integration: </b>Proporciona soporte para la creación de aplicaciones basadas en patrones
+                de integración empresarial.
+                <br> <b>Spring Batch:</b> Facilita el desarrollo de aplicaciones de procesamiento por lotes.
+                <br> <b>Spring AMQP:</b> Soporte para el protocolo Advanced Message Queuing Protocol (AMQP).
+                <br> <b>Spring Kafka:</b> Integración con el sistema de mensajería distribuida Apache Kafka.
+                <br><br>
+                <li> Módulos de Test:</li>
+
+                <br> <b> Test:</b> Proporciona soporte para la realización de pruebas unitarias e de integración de las
+                aplicaciones Spring.
+
+            </ol>
+
+            <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+        </section>
+        <section id="Funcionamiento">
+
+
+            <h3>Funcionamiento</h3>
+            El Funcionamiento del Spring Framework se centra .
+
+            <li>1. Inversión de Control (IoC) y Contenedor IoC:</li><br>
+
+            Spring invierte este control. El Contenedor IoC: Es el corazón de Spring. Se encarga de:<br>
+            Crear instancias de los objetos (beans) de la aplicación.
+            <br>Configurar estos objetos.
+            Ensamblar las dependencias entre ellos (inyección de dependencias).
+            Gestionar el ciclo de vida de estos beans.
+            <br>Cómo Funciona: El contenedor IoC lee la información de configuración (normalmente en archivos XML,
+            anotaciones Java o configuración basada en Java) que describe cómo crear y ensamblar los beans. Luego,
+            instancia los objetos y les inyecta las dependencias necesarias.
+
+            <br>
+            <li>2. Inyección de Dependencias (DI):</li>
+
+            La DI es la forma en que el contenedor IoC proporciona las dependencias a los beans. Hay principalmente dos
+            tipos de inyección:
+            Inyección por Constructor: Las dependencias se proporcionan como argumentos al constructor de la clase. Es
+            la forma recomendada ya que asegura que las dependencias necesarias estén disponibles al crear el objeto.
+            Inyección por Setter: Las dependencias se proporcionan a través de métodos setter de la clase.
+            <BR>
+            <LI>3. Programación Orientada a Aspectos (AOP):</LI><BR>
+
+            AOP permite modularizar estas "preocupaciones transversales" en entidades separadas llamadas aspectos.
+            <BR>
+            <BR>
+            <LI>4. Abstracciones sobre Tecnologías Existentes:</LI>
+
+
+            Simplificación del Desarrollo: Spring maneja gran parte del código boilerplate y la configuración tediosa.
+            <BR>
+            <LI>5. Arquitectura Modular:</LI><BR><BR>
+
+            Como se mencionó anteriormente, Spring está organizado en módulos.
+            Esto permite a los desarrolladores utilizar solo las partes del framework
+            que realmente necesitan, reduciendo la complejidad y el tamaño de la aplicación.<BR>
+
+            <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+        </section>
+        <section id="Ejemplos">
+            <h2>Ejemplos</h2>
+
+
+            <p>1. Definición de una Interfaz (la dependencia): </p>
+            <textarea id="bien">
+
+            public interface ServicioMensajes {
+                String enviarMensaje(String destinatario, String mensaje);
+            }
+       </textarea><BR><BR>
+            2. Implementación de la Interfaz (una dependencia concreta):<BR>
+            <textarea id="bien">
+    import org.springframework.stereotype.Component;
+
+    @Component
+    public class ServicioEmail implements ServicioMensajes {
+        @Override
+        public String enviarMensaje(String destinatario, String mensaje) {
+            return "Enviando email a " + destinatario + ": " + mensaje;
+        }
+    }
+    <!--La anotación @Component le dice a Spring que esta clase
+     es un bean que debe ser gestionado por el contenedor.-->
+</textarea><BR>
+            3. Una Clase que Utiliza la Dependencia:<BR><BR>
+
+            <textarea id="bien">
+    <!--.java-->
+    import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Notificador {
+
+    private ServicioMensajes servicioMensajes;
+
+    @Autowired
+    public Notificador(ServicioMensajes servicioMensajes) {
+        this.servicioMensajes = servicioMensajes;
+    }
+
+    public String notificar(String destinatario, String mensaje) {
+        return servicioMensajes.enviarMensaje(destinatario, mensaje);
+    }
+}
+
+</textarea><BR>
+
+            <textarea id="bien">
+<!--.java-->
+    import org.springframework.context.annotation.ComponentScan;
+    import org.springframework.context.annotation.Configuration;
+    
+    @Configuration
+    @ComponentScan("com.ejemplo") // Reemplaza "com.ejemplo" con el paquete de tus clases
+    public class AppConfig {
+        // No necesitamos definir beans explícitamente aquí si usamos @Component y @Autowired
+    }
+ </textarea>
+            <br>
+            <textarea id="bien">
+    import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+    public class MainApp {
+        public static void main(String[] args) {
+            // Inicializar el contenedor de Spring leyendo la configuración
+            AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    
+            // Obtener una instancia del bean Notificador del contenedor
+            Notificador notificador = context.getBean(Notificador.class);
+    
+            // Usar el bean
+            String resultado = notificador.notificar("usuario@ejemplo.com", "¡Hola desde Spring!");
+            System.out.println(resultado); // Salida: Enviando email a usuario@ejemplo.com: ¡Hola desde Spring!
+    
+            // Cerrar el contexto de Spring
+            context.close();
+        }
+    }
+</textarea>
+
+        </section>
+
+    </main>
+    <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

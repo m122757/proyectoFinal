@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title || 'Gráfico y Tabla con Datos JSON' %></title>
+  <!-- Incluir Chart.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    th, td {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+ 
+    <h2>Registro de Estudiantes matriculados en los ultimos 5 años en
+       el grado Tecnico UASD segun Estadísticas Generales PBI, UASD</h2>
+
+  <!-- Canvas para el gráfico -->
+  <canvas id="grafico" width="400" height="200"></canvas>
+
+  <!-- Contenedor para la tabla -->
+  <div id="table-container"></div>
+
+  <script>
+    // Ruta a tu archivo JSON; si está en "public", basta con el nombre
+    const url = 'data.json';
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Extraer etiquetas (años) y valores (estudiantes) del JSON
+        const year = data.map(item => item.Año);
+        const cantEstudiantes = data.map(item => item.Estudiantes);
+
+        crearTabla(data);
+
+        // Configurar y renderizar el gráfico
+        const ctx = document.getElementById('grafico').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',  // Tipo de gráfico (barra)
+          data: {
+            labels: year, // Etiquetas: años
+            datasets: [{
+              label: 'Estudiantes Matriculados en los últimos 5 años',
+              data: cantEstudiantes,
+              backgroundColor: [
+                'rgba(10, 192, 7, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(255, 99, 132, 0.6)'
+              ],
+              borderColor: [
+                'rgba(10, 192, 7, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(255, 99, 132, 0.6)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true 
+              }
+            }
+          }
+        });
+      })
+      .catch(error => console.error('Error al cargar el JSON:', error));
+   
+    // Función para crear la tabla a partir de los datos JSON
+    function crearTabla(jsonDatos) {
+      const tableContainer = document.getElementById("table-container");
+
+      // Crear el elemento tabla
+      const table = document.createElement("table");
+
+      // Crear la cabecera de la tabla
+      const thead = document.createElement("thead");
+      const headers = Object.keys(jsonDatos[0]);
+      const headerRow = document.createElement("tr");
+      headers.forEach(header => {
+        const th = document.createElement("th");
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+
+      // Crear el cuerpo de la tabla
+      const tbody = document.createElement("tbody");
+      jsonDatos.forEach(row => {
+        const tr = document.createElement("tr");
+        headers.forEach(header => {
+          const td = document.createElement("td");
+          td.textContent = row[header];
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      // Agregar las secciones a la tabla
+      table.appendChild(thead);
+      table.appendChild(tbody);
+
+      // Insertar la tabla en el contenedor
+      tableContainer.appendChild(table);
+    }
+  </script>
+</body>
+</html>
+

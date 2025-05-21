@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title><%= title || 'XML' %></title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+    <h1 align="center"><%= nombre %></h1>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#Historia">Historia</a></li>
+                <li><a href="#XML">XML</a></li>
+                <li><a href="#Estructura">Estructura</a></li>
+                <li><a href="#Ejemplos">Ejemplo</a></li>
+            </ul>
+        </nav>
+
+        <section id="Historia">
+            <h1>Historia</h1>
+            <p>El XML (Extensible Markup Language =
+                lenguaje de marcas extensible) comenzó a
+                desarrollarse a fines de 1996 a recomendacion
+                del World Wide Web Consortium (W3C) a partir de 10 de Febrero de 1998
+                 se confirmo su uso con la intención de crear un estándar en el lenguaje
+                de marcas que permitiera integrar la simplicidad
+                que ofrece el HTML.
+            </p>
+        </section>
+
+        <section id="XML">
+            <h1>XML</h1>
+            <h2>Conceptos </h2>
+            <ul>
+                <li><strong>Que es un XML:</strong> <br>Por lenguaje: el conjunto de reglas que definen
+                    una sintaxis y una gramática.<br>Por marcado: un método para escribir o incrustar metadatos<br>
+                    Metadato : Es la información que podemos aportar sobre otro conjunto de datos.
+                    <br>
+                    Podemos decir que XML se usa para transportar datos y html para mostrar y dar formato a los datos.
+                    con XML los datos se pueden almacenar en ficheros XML separados o un texto plano
+
+
+                </li>
+                <li><strong>Vocabularios XML:</strong>
+                <li><strong>CML( Chemical Markup Languaje ):</strong> son usuados como medio de intercambio
+                    de información, dentro de un dominio de conceptos específico</li>
+                <li><strong> MathML ( Mathematical Markup Languaje ):</strong>permite la
+                    representación de expresiones matemáticas, sin tener que representarlas mediante imágenes o
+                    complicadas y
+                    horribles aproximaciones ASCII.</li>
+
+                </li>
+                <li><strong>Declaracion</strong> </li>
+                <p>En un documento XML la estructura y el diseño están completamente separados.
+                    <br>XML debe ser el primer elemento del documento, es sensible a mayuscula y minúsculas.
+                    <br>empieza con &lt;?xml, tambien indica en que version esta
+                </p>
+
+                <li><strong> Existe dos capas cliente en la arquitectura de manipulación de XML</strong></li>
+                <P><br>1- La primera de estas capas es el procesador XML ( o parser XML ) El parser XML debe asegurarse
+                    de que
+                    el fichero XML cumple con el proceso que se conoce como validación. <br><br>
+                    2- La segunda de estas capas es el procesador XSLT, que a partir de un fichero XML validado es capaz
+                    de realizar
+                    transformaciones sobre este.
+                </P>
+            </ul>
+        </section>
+        <section id="Estructura">
+            <h1>Estructura</h1>
+            <ul>
+                <li><strong>Que es un tag</strong><br>
+              
+                    <p>los tags estas delimitan las diferentes secciones del contenido, las referencias a símbolos
+                        especiales y los comentarios que podemos introducir a través de
+                        los editores de documentos.<br>señala una porción de este como un elemento. Un pedazo de
+                        información con un sentido claro y definido. Las etiquetas tienen la forma <nombre>,
+                            donde nombre es el nombre del elemento que se está señalando.
+                    </p>
+                <li><strong>Elementos y Estructura de XML</strong> </li><br>
+
+                <li><strong>Elementos de una Tag</strong><br>
+                    <p>
+                        1- Los identificadores de etiquetas, son sensibles a mayúsculas y minúsculas, y siempre
+                        empezarán a escribirse a
+                        continuación el signo “<” y termina en ">" <br>
+                            2-Los Tags deben tener el mismo nombre en la apertura y en el cierre.<br>
+                            <textarea rows="3" cols="40"> <FONT> <B> <I> 123456 </I> </B> </FONT></textarea><br>
+
+                            3- Los Tags vacíos o simples: se abrirán y cerrarán en el propio Tag, Por tag simple,
+                            , entenderemos aquellos tags similares a “&lt;IMG&gt; &lt;BR&gt; &lt;HR&gt;
+                            "en el HTML,
+                            Para cerrarlos en el mismo Tag deberemos, añadirles la barra “/” , antes del
+                            símbolo "&gt; "<br>
+                            <textarea rows="3" cols="40"> </textarea><br><br>
+
+                            Esta regla nos permite abreviar los Tags sin contenido de la siguiente
+                            manera:<br>
+                            <textarea rows="3"
+                                cols="60">   <font color="#456" ></font> ... equivalente a ... <font color="456" /> </textarea><br><br>
+                    </p>
+                </li>
+
+                <p>
+                    Los elementos siempre estarán delimitados por un Tag de apertura y otro de cierre, que podrá
+                    contener cero o más atributos.<br>
+
+                    Entidades especiales: Si todos los tags van delimitados por los símbolos “&lt;” y “&gt;”,<br>
+                    ,
+                    <!--<textarea rows="6" cols="60">-->
+                    * Para el signo “<” se usará: & lt; <BR>
+                        * Parael signo “>” se usará: & gt;<br>
+                        * Parael signo “&” se usará: &amp ;<br>
+                        * Parael signo “'” se usará: & apos;<br>
+                        * Parael signo “"” se usará: &quo t ;<br><br>
+                        <!-- </textarea><br>-->
+
+                        <strong> Para crear o editar un archivo XML debe usar:
+                        </strong><br><br>
+                        Editores de texto (NotePad, sublime, visual Studio Code etc...)
+                        y un Navegador Web.
+                        <br>
+                        <p> Su estructura es tipo jerarquica es decir los elementos en un documento XML forma una
+                            estructura de arbol que empieza con una raiz y las ramas hacia el nivel mas bajo.
+                            <br> Los terminos de padre, hijo y subhijo se usan para describir la relacion que hay entre
+                            los elementos.<br>
+                            <strong>El elemento Raiz </strong> es el padre de los demas elementos,
+                            y a su vez los elementos pueden tener subelementos o hijos.
+
+                            <br>
+                            <br>
+                            < raiz>
+                                <br>
+                                < hijo>
+                                    <br>
+                                    < subhijo>...< /subhijo>
+                                            <br>
+                                            < /hijo>
+                                                <br>
+                                                < /raiz>
+
+                                                    < /raiz><br>
+                                                        <br> documento XML que trata sobre un Libro.<br>
+
+                                                       
+                                                        <p>ahora el documento XML de la imagen anterior
+                                                            <br><br>
+                                                        </p>
+                                                        <strong>Que es una DTD(Document Type Definition)</strong><br>
+                                                        es un archivo de texto de la extencion .dtd cuyo contenido es el
+                                                        elemento raiz y una descripcion de todos los elementos que
+                                                        intervienen en dicho elemento
+                                                        raiz.<br><br>
+
+                                                        <strong>DTD</strong>: describe la estructura de un documento
+                                                        XML,
+                                                        que
+                                                        elemntos debe aparecer, su orden, si son opcional y obligatorio,
+                                                        etc... por tanto una DTD describe:<br>
+                                                        <strong>Elemento</strong>:indican las etiquetas que se permiten
+                                                        y
+                                                        contienen.<br>
+                                                        <strong>Estructura</strong>:indica el orden de las etiquetas en
+                                                        el
+                                                        documento.<br>
+                                                        <strong>Anidamiento</strong>:indica que etiqueta va dentro de
+                                                        otra, su orden va desde dentro hacia afuera<br>
+                                                        Ejemplo:<br>
+                                                        < b>
+                                                            < i>.....< / i>
+                                                                    < / b>
+
+
+                        </p>
+                        <p>
+                            <li><strong>Creacion de un Documento XML</strong></li><br>
+                            En un documento XML se puede crea tus propias etiquetaas.
+                            <br>
+                            < identidad><br>
+                                < apellido>Soto < / apellido> <br>
+                                        < nombre> Juan < / nombre> <br>
+                                                < / identidad> <br>
+
+                                                    Este es un Documento XML simple, utiliza la estiquetas de forma
+                                                    personalizada.
+                                                    <br> En este Documento describe una Tarjeta de visita<br>
+                                              
+                                                    <strong>Los Comentarios</strong><br>
+                                                    asi como en otro lenguaje aqui se utiliza <br>
+                                                    < !-- hola mundo --><br>
+
+                        </p>
+
+                        <li><strong>Atributos XML</strong></li>
+                        <p>
+                            Los Atributos son informacion adicional relacionada con XML, Los valores deben estar entre
+                            Comillas.
+                            se escribe:<br>
+                            < elemento atributo="valor de atributo">Valor del Elemento</ elemento><br>
+                            < persona sexo="masculino">masculino</ persona><br><br>
+
+                            Algunos estan definidos por el lenguaje<br> xml:lang define el lenguaje utilizado en un
+                            archivo
+                            XML<br>
+                            xml:space permite excluir los espacios multiples en un nombre.<br><br>
+                        </p>
+                        <li>Un Documento no bien formado sigue las siguiente reglas:</li><br>
+                        - Algunas etiquetas no estan cerradas.<br>
+                        - El Documento no cuenta con un prologo valido.<br>
+                        - Los Documentos no estan Anidados correctamente.<br>
+                        - Los Atributos no estan encerrados entre comillas corretacmente.<br>
+                        - El Documento no tiene ningun elemento Raiz.<br><br>
+                        Ejemplo de uno bien formado:<br><br>
+                        <textarea id="bienFor">
+                <directorio> 
+                <entrada> 
+                    <apellido> Jimenez </apellido>
+                    <nombre> Juan </nombre>
+                </entrada> <br>
+               </directorio> 
+            </textarea><br>
+
+                </p>
+            </ul>
+        </section>
+
+        <section id="Ejemplos">
+          <h1>Ejemplos de XML</h1>
+            <h2>Documento XML</h2>
+            <textarea id="EJEMPLO">
+                <?xml version="1.0"?>
+                    <customers>
+                <customer id="55000">
+                    <name>Charter Group</name>
+                    <address>
+                        <street>100 Main</street>
+                        <city>Framingham</city>
+                        <state>MA</state>
+                        <zip>01701</zip>
+                    </address>
+                    <address>
+                        <street>720 Prospect</street>
+                        <city>Framingham</city>
+                        <state>MA</state>
+                        <zip>01701</zip>
+                    </address>
+                    <address>
+                        <street>120 Ridge</street>
+                        <state>MA</state>
+                        <zip>01760</zip>
+                    </address>
+                </customer>
+                </customers>
+                            </textarea><br>
+                            <h1>CustomersOrders.xsd</h1>
+                            <h3>muestra el cliente y el pedido</h3>
+                            <br>
+                            <textarea id="EJEMPLO">
+                                <?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name='Root'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name='Customers'>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name='Customer' type='CustomerType' minOccurs='0' maxOccurs='unbounded' />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name='Orders'>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name='Order' type='OrderType' minOccurs='0' maxOccurs='unbounded' />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name='CustomerIDKey'>
+      <xs:selector xpath='Customers/Customer'/>
+      <xs:field xpath='@CustomerID'/>
+    </xs:key>
+    <xs:keyref name='CustomerIDKeyRef' refer='CustomerIDKey'>
+      <xs:selector xpath='Orders/Order'/>
+      <xs:field xpath='CustomerID'/>
+    </xs:keyref>
+  </xs:element>
+  <xs:complexType name='CustomerType'>
+    <xs:sequence>
+      <xs:element name='CompanyName' type='xs:string'/>
+      <xs:element name='ContactName' type='xs:string'/>
+      <xs:element name='ContactTitle' type='xs:string'/>
+      <xs:element name='Phone' type='xs:string'/>
+      <xs:element name='Fax' minOccurs='0' type='xs:string'/>
+      <xs:element name='FullAddress' type='AddressType'/>
+    </xs:sequence>
+    <xs:attribute name='CustomerID' type='xs:token'/>
+  </xs:complexType>
+  <xs:complexType name='AddressType'>
+    <xs:sequence>
+      <xs:element name='Address' type='xs:string'/>
+      <xs:element name='City' type='xs:string'/>
+      <xs:element name='Region' type='xs:string'/>
+      <xs:element name='PostalCode' type='xs:string' />
+      <xs:element name='Country' type='xs:string'/>
+    </xs:sequence>
+    <xs:attribute name='CustomerID' type='xs:token'/>
+  </xs:complexType>
+  <xs:complexType name='OrderType'>
+    <xs:sequence>
+      <xs:element name='CustomerID' type='xs:token'/>
+      <xs:element name='EmployeeID' type='xs:token'/>
+      <xs:element name='OrderDate' type='xs:dateTime'/>
+      <xs:element name='RequiredDate' type='xs:dateTime'/>
+      <xs:element name='ShipInfo' type='ShipInfoType'/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name='ShipInfoType'>
+    <xs:sequence>
+      <xs:element name='ShipVia' type='xs:integer'/>
+      <xs:element name='Freight' type='xs:decimal'/>
+      <xs:element name='ShipName' type='xs:string'/>
+      <xs:element name='ShipAddress' type='xs:string'/>
+      <xs:element name='ShipCity' type='xs:string'/>
+      <xs:element name='ShipRegion' type='xs:string'/>
+      <xs:element name='ShipPostalCode' type='xs:string'/>
+      <xs:element name='ShipCountry' type='xs:string'/>
+    </xs:sequence>
+    <xs:attribute name='ShippedDate' type='xs:dateTime'/>
+  </xs:complexType>
+</xs:schema>
+                            </textarea>
+        </section>
+    </main>
+    <footer>
+     
+    </footer>
+</body>
+
+</html>

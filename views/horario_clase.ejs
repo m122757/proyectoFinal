@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Usa la variable "title" para definir el título de la página -->
+  <title>
+    <%= title || 'Página de Bienvenida' %>
+  </title>
+  <link rel="stylesheet" href="./estilos.css">
+
+</head>
+
+<body bgcolor="lightblue">
+  <!-- Menú de navegación -->
+
+
+  <!-- Título principal (nombre) -->
+  <h1 align="center">
+    <%= nombre %>
+  </h1>
+  <hr>
+<header>
+  
+  </header>
+  <!-- Sección de Datos Bibliográficos -->
+  <div>
+    <h3>Datos Bibliogr&aacute;ficos</h3>
+    <ol style="text-align: left;">
+      <li>
+        <%= nombre %>, nació en <%= datos.nacimiento %>, <%= datos.pais %>.
+              Vive en <%= datos.residencia %>; hizo el bachillerato en <%= datos.bachillerato %>,
+                  estudió <%= datos.estudio %> en <%= datos.instEducacion %> y consiguió un trabajo como <%=
+                        datos.trabajo %>.
+                        Actualmente, cursa <%= datos.carrera %> en <%= datos.institucion %> y cursa varias materias que
+                            se mencionarán a continuación.
+      </li>
+    </ol>
+  </div>
+
+  <hr>
+  <br>
+  <!-- Tabla de Horario de Clases --><br><br>
+  <table align="center" border="2" style="width:auto; height:25px;"
+    class="table table-condensed table-bordered table-hover">
+    <br>
+    <caption>Horario de Clase</caption>
+    <br>
+    <thead>
+      <tr class="title" bgcolor="lightblue">
+        <th rowspan="2">Instructor asignado</th>
+      </tr>
+      <tr align="center" bgcolor="lightblue">
+        <th>Donde</th>
+        <th>D&iacute;a</th>
+        <th>Hora</th>
+        <th>Secci&oacute;n</th>
+        <th>Asignatura</th>
+      </tr>
+    </thead>
+    <tbody bgcolor="white">
+      <% horarios.forEach(function(horario) { %>
+        <tr>
+          <td>
+            <%= horario.instructor %>
+          </td>
+          <td>
+            <%= horario.donde %>
+          </td>
+          <td>
+            <%= horario.dia %>
+          </td>
+          <td>
+            <%= horario.hora %>
+          </td>
+          <td align="center">
+            <%= horario.seccion %>
+          </td>
+          <td>
+            <%= horario.asignatura %>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+
+  <br>
+  <footer>
+
+  </footer>
+</body>
+
+</html>

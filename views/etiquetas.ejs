@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title><%= title || 'Etiquetas Html' %></title>
+ <link rel="stylesheet" href="./estilos.css">
+  
+</head>
+<body>
+  <h1 align="center"><%= nombre %></h1>
+  <hr>
+  <table>
+    <caption></caption>
+    <thead>
+      <tr class="title">
+        <th rowspan="2" bgcolor="lightblue" >#</th>
+        <th>Nombre de la Etiqueta</th>
+        <th width= "60%">Descripción</th>
+        <th>Ejemplo de uso</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% etiquetas.forEach(function(etiqueta, index){ %> 
+
+        <tr>
+        <td><%= index + 1 %></td>
+        <td><%= etiqueta.nombre %></td>
+        <td><%= etiqueta.descripcion %></td>
+        <td><%= etiqueta.ejemplo %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <br>
+  <footer>
+   <!--esta en Layout.ejs-->
+  </footer>
+</body>
+</html>
+

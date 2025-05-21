@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Modelo MVC' %></title>
+     
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+      <h1 align="center"><%= nombre %></h1>
+ 
+    <main>
+        <nav >
+            <ul>
+                <li><a href="#Historia">Historia</a></li>
+                <li><a href="#mvc">Modelo MVC </a></li>
+                <li><a href="#Estructura">Estructura</a></li>
+                <li><a href="#Ejemplos">Ejemplos</a></li>
+            </ul>
+        </nav>
+
+        <section id="Historia">
+            <h2>Historia</h2>
+         
+                
+                <p>
+                    El patrón Modelo-Vista-Controlador (MVC) nació en el contexto del <br>desarrollo de interfaces gráficas de usuario y se consolidó como una<br> solución para separar las preocupaciones en las<br> aplicaciones, haciendo más fácil su desarrollo y mantenimiento.<br>
+
+                   <li>Década de 1970</li>
+                    El concepto de MVC se inició cuando Trygve Reenskaug lo introdujo<br> en Smalltalk-76 durante su visita a Xerox PARC. La idea central era separar la representación de la información (la Vista),<br> la lógica de negocio y gestión de datos (el Modelo), y el manejo de la interacción del usuario (el Controlador) para crear sistemas más organizados y modulares.
+                    <li>1988</li>se redactó y difundió un artículo que formalizó el concepto MVC, estableciendo de manera clara el rol de cada componente. En esta primera definición, el Controlador se definía como el encargado de gestionar la entrada (similares a la forma en que la Vista se encargaba de la salida), lo cual marcó el inicio formal de la separación de responsabilidades
+                    en el desarrollo de software. <br>
+
+                     </p>
+           
+           
+        </section>
+        <section id="mvc">
+            <h2>Modelo MVC</h2>            
+            <ol>
+
+                
+                <br><b>Modelo-Vista-Controlador (MVC)</b> separa la aplicacion en tres componentes principales
+                
+                    <p> un <b>Controlador </b> es el vinculo entre el usuario y el sistema.
+                        Proporciona al usuario informacion al organizar que vistas <br>se presentan
+                        en lugares adecuados de la pantalla.Proporciona medios <br>para la información del usuario
+                        al presentarle menus u otros medios para dar comandos y datos .
+                        
+                        el controlador recibe la informacion del usuario,traduce el mensaje adecuado
+                         y pasa  estos mensajes a una o mas vistas.<br><br>
+                         Un<b> controlador</b> nunca debe complementar las vistas.<br>
+                         Una<b> vista </b>nunca debe  saber la informacion del usuario.<br><br>
+                  <b> Vista</b><br> son los componentes que muestran la interfaz de usuario de la aplicacion.<br>
+                    la vista no se comunica directamente <br>con los modelos sino que lo hace a  traves de los controladores.<br><br>
+                 <br><b>Modelo</b><br>El Modelo contiene la lógica de negocio y la gestión de datos. Se encarga de acceder a bases de datos, aplicar reglas de negocio, realizar validaciones y, 
+                   en general, gestionar la información de la aplicación. <br>
+                
+                ¿Cual es la  funcion modelo-vista-Controlador?<br><br>
+                El Controlador cuando el usuario realiza una acción en la Vista, esta se transmite al Controlador, el cual interpreta la intención del usuario y
+                 decide qué operaciones deben realizarse. <br><br>La Vista  su función es simplemente mostrar los datos proporcionados por el Modelo y notificarlos al Controlador cuando ocurren interacciones.
+                <br><br>El Modelo Se encarga de acceder a bases de datos, aplicar reglas de negocio, realizar validaciones y, en general, gestionar la información de la aplicación<br><br>
+               
+                
+                <br> <br><b>Ventajas</b><br>
+                   <br> <br>1-se facilita el mantenimiento y la organización del código.  Esta separación permite modificar o actualizar uno de los componentes sin afectar significativamente a los otros, lo que resulta en un proceso de desarrollo más limpio y estructurado.<br>
+                   <br><br>2-El Modelo se encarga de la lógica y el manejo de datos, pudiendo reutilizarse en diferentes partes de la aplicación o incluso en proyectos distintos.
+                   <br> <br>3-Debido a la separación de responsabilidades, es más sencillo implementar pruebas unitarias y de integración para cada componente de manera aislada. 
+                   <br> <br>4-La organización en componentes facilita la ampliación y actualización de la aplicación a medida que crece. La lógica de negocio encapsulada en el Modelo y la interfaz de usuario independiente en la Vista permiten añadir nuevas funcionalidades o modificar las existentes de forma 
+                    menos acoplada y con menor riesgo de generar errores. 
+                <br><br>
+                <br><b>Desventajas</b>
+                <br> <br>1-En aplicaciones o prototipos simples, la estructuración en múltiples capas (Modelo, Vista y Controlador) puede resultar excesiva y redundante
+                <br><br>2-La separación de componentes suele resultar en la creación de numerosos archivos y directorios. Esta fragmentación puede dificultar la navegación y el mantenimiento del proyecto si no se organiza adecuadamente.
+                <br><br>3-Si la interacción entre el Modelo, la Vista y el Controlador no se gestiona con cuidado, se puede generar confusión en el flujo de datos y en la coordinación de funcionalidades. Esto puede dificultar la depuración y extender el tiempo de desarrollo a medida que la aplicación crece. 
+            </p>
+            
+        </ol>
+         
+            <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+        </section>
+        <section id="Estructura">
+            <h2>Estructura</h2>
+          <h3>Patrón de diseño Modelo-Vista-Controlador para PHP, Java </h3> <br><br>
+        <p>  Un objeto controlador interpreta las acciones del usuario realizadas en los objetos de la vista y comunica los datos nuevos o modificados a la capa del modelo. Cuando los objetos del modelo cambian, un objeto controlador comunica esos 
+           nuevos datos del modelo a los objetos de la vista para que éstos puedan mostrarlos.<br><br>
+          Los objetos modelo encapsulan los datos específicos de una aplicación y definen la lógica y la computación que manipulan y procesan esos datos.<br>
+          Las acciones del usuario en la capa de vista que crean o modifican datos se comunican a
+         través de un objeto controlador y dan lugar a la creación o actualización de un objeto
+          modelo.<br>
+          Un objeto de vista es un objeto en una aplicación que los usuarios pueden ver. 
+          Un objeto de la vista sabe cómo dibujarse a sí mismo y puede responder a las acciones del usuario. Uno de los principales propósitos de los objetos de la vista es mostrar los datos de los objetos modelo de la aplicación y permitir la edición de esos datos.<br>
+
+            
+        </p>
+        <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+    </section>
+    <section id="Ejemplos">
+        <h2>Ejemplos</h2>
+
+       <h3> En java</h3><br>
+       <p>vista </p>   
+        <textarea id="bien">
+         <!--vista.html-->   
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vista</title>
+</head>
+<body>
+    <h2>Detalle de usuario</h2>
+    <p>Nombre:<span th:text="${usuario.name}"></span></p>
+    <p>Email:<span th:text="${usuario.email}"></span></p>
+</body>
+</html>
+
+<!--controlasor.java-->
+
+import org.springframework.stereotype.controller;
+import org.springframework.ui.model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@controller
+public class UserController{
+   @GetMapping("/")
+   public String getUser(Model model){
+    final var user = new userModel(name="juanita",email="juaniita@gmail.com");
+    model.addAttribute(AttributeName="usuario",user);
+    return "vista"; //vista.html
+   }
+
+}
+<!--userModel.java-->
+
+package com.programandoenjava.youtuber_spring;
+
+public record userModel(String name, String email){
+    
+}
+       </textarea>
+<p>
+    <h3>En PHP</h3>
+    Para implementar el MVC es imprescindible crear una estructura de ficheros parecida a esta:
+    <br>
+   
+    index.ph<br>
+    <textarea  id="ejemplo">
+        <?php
+require_once("db/db.php");
+require_once("controllers/personas_controller.php");
+?>
+
+
+    </textarea><br>
+    db.php<br>
+    <textarea id="ejemplo">
+        <?php
+class Conectar{
+    public static function conexion(){
+        $conexion=new mysqli("localhost", "root", "", "mvc");
+        $conexion->query("SET NAMES 'utf8'");
+        return $conexion;
+    }
+}
+?>
+    </textarea><br>
+    model/personas_model.php<br>
+
+    <textarea  id="ejemplo">
+        <?php
+class personas_model{
+    private $db;
+    private $personas;
+ 
+    public function __construct(){
+        $this->db=Conectar::conexion();
+        $this->personas=array();
+    }
+    public function get_personas(){
+        $consulta=$this->db->query("select * from personas;");
+        while($filas=$consulta->fetch_assoc()){
+            $this->personas[]=$filas;
+        }
+        return $this->personas;
+    }
+}
+?>
+    </textarea><br>
+
+    contoller/personas_controller.php<br>
+<textarea id="ejemplo">
+    <?php
+//Llamada al modelo
+require_once("models/personas_model.php");
+$per=new personas_model();
+$datos=$per->get_personas();
+ 
+//Llamada a la vista
+require_once("views/personas_view.phtml");
+?>
+
+</textarea><br>
+view/personas_view.phtml<br>
+<textarea  id="ejemplo">
+    <!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Personas</title>
+    </head>
+    <body>
+        <?php
+            foreach ($datos as $dato) {
+                echo $dato["nombre"]."<br/>";
+            }
+        ?>
+    </body>
+</html>
+
+</textarea><br>
+
+    </section>
+   
+</main>
+<a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+
+  
+<footer>
+ 
+</footer>
+
+</body>
+</html>

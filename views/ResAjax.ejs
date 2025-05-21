@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Ajax' %></title>
+     
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+      <h1 align="center"><%= nombre %></h1>
+    <main>
+        <nav >
+            <ul>
+                <li><a href="#Historia">Historia</a></li>
+                <li><a href="#ajax">AJAX</a></li>
+                <li><a href="#Estructura">Estructura</a></li>
+                <li><a href="#Ejemplos">Ejemplos</a></li>
+            </ul>
+        </nav>
+
+        <section id="Historia">
+            <h2>Historia</h2>
+            
+                
+                <p>
+                   <li>1999</li>Microsoft lanzó el objeto XMLHttpRequest (XHR) como parte de Internet Explorer 5.<br> Este objeto fue diseñado para enviar y recibir datos de un servidor en segundo plano.
+                   <li>2005</li>Jesse James Garrett, cofundador de Adaptive Path, acuñó el término "AJAX" en su<br> artículo titulado "Ajax: A New Approach to Web Applications". En este artículo, Garrett describió cómo combinar varias tecnologías (HTML, CSS, JavaScript, DOM, XHR y XML o JSON) para desarrollar aplicaciones web modernas.
+                    Surgieron bibliotecas como jQuery, que simplificaron el uso del objeto XMLHttpRequest y la manipulación del DOM.<br>
+                    <li>2010s</li>Surgen nuevas APIs como Fetch API (introducida en 2015) que modernizaron y simplificaron las solicitudes HTTP en JavaScript, reemplazando gradualmente a XMLHttpRequest.
+                   AJAX se convirtió en un concepto más amplio que incluye el uso de múltiples tecnologías para crear aplicaciones web dinámicas.
+                   </p>
+            
+           
+        </section>
+        <section id="ajax">
+            <h2>AJAX</h2>            
+         <di>
+            
+          <p>AJAX (Asynchronous JavaScript and XML) JavaScript asincronaS
+            es una técnica de desarrollo web que permite a las aplicaciones 
+            web enviar y recibir datos del servidor de forma asíncrona
+            sin recargar toda la página.<br><br>
+            ¿Cómo funciona AJAX?<br>AJAX combina varias tecnologías para
+            permitir la comunicación entre el cliente (navegador) y
+            el servidor. <br><br>A continuación, se describe el funcionamiento básico:<br>
+            <li>Evento del Usuario:</li>El usuario realiza una acción en la página web, como hacer clic en un botón,
+             llenar un formulario o desplazarse por la página.<br><br>
+            <li>Solicitudes Asíncronas:</li>El navegador envía una solicitud HTTP al
+            servidor utilizando el objeto XMLHttpRequest (XHR) o la API Fetch.
+            Esta solicitud puede ser de tipo GET, POST, PUT, DELETE, etc.,
+            dependiendo del tipo de operación que se quiera realizar.<br><br>
+            <li>Procesamiento en el Servidor:</li>El servidor recibe la solicitud, la procesa y envía una respuesta.
+             La respuesta puede ser en formato JSON, XML, HTML o texto plano.<br><br>
+            <li>Actualización de la Página:</li>Una vez que la respuesta llega al cliente, JavaScript procesa los 
+            datos y actualiza dinámicamente el contenido de la página sin recargarla.<br><br>
+            Para validar y limpiar datos en AJAX, es importante realizar tanto
+             validaciones en el cliente (JavaScript) como en el servidor (backend).
+              Esto asegura que los datos sean correctos y seguros antes de procesarlos.<br>
+
+            <li>Validaciones en el cliente:</li> Son útiles para mejorar la experiencia 
+            del usuario, pero no son seguras porque el cliente puede ser manipulado.<br><br>
+
+            <li>Validaciones en el servidor:</li> Son obligatorias para garantizar la 
+            seguridad de la aplicación.<br><br>
+            <li>Limpieza de datos:</li> Usa funciones como trim, filter_var, o sanitizadores específicos
+             para limpiar entradas antes de procesarlas o almacenarlas.<br><br>
+         <br><br>
+             Existe algunos Funciones y metodos dentro de AJAX:<br><br>
+             <li>Request</li> simula el funcionamiento del Navegacion.
+            Cuando se da click en un link se hace una peticion su resultado 
+            realiza dentro de si mismo en segundo plano; posee algunos metodos y propiedades:<br>
+                <h4>Propiedades:</h4>
+                <li>readyState</li> indica si la paginaaun esta siendo buscada o  si llego.<br>
+                <li>responseText</li>resultado de la peticion en texto comun.<br>
+                <li>responseXML</li>resultado en formato XML.<br>
+                <li>Status</li>codigo de error<br>
+                <li>StatusText</li>codigo  de error en formato texto<br>
+                <li>onreadystatechange</li>indica la funcion que sera ejecutada cuando la peticion cambia su readyState<br>
+
+                <h4>Metodos</h4>
+                <li>open("GET", "https://api.example.com/datos", true);</li> es de valor booleana abre una nueva peticion
+                con el metodo escogido "GET"  o "POST" esta peticion puede sincrona(false) o asincrona(true)<br>
+                <li>Send(content)</li>inicia la comunicacion con la URL y recibe solo el paramento<br>
+                <li>abort()</li> finaliza una peticion que aun no devuelve ninguna respuesta del servidor<br>
+                <li>SetRequestHeader("label","value")</li>es importante cuando utilizamos el metodo POST 
+                para establecer el contenidode la peticion para multipart<br>
+                <li>GetResponseHeader("headername") y getAllResponseHeader()</li> son utiles con comprobacion de seguridad<br>
+
+        
+
+            </p>
+            
+            
+           </di>
+            <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+        </section>
+        <section id="Estructura">
+            <h2>Estructura</h2>
+            <p> La estructura básica de una petición AJAX se puede resumir en varios pasos clave:
+                <li>1-Creación del objeto XMLHttpRequest:</li><br>establece la base para la comunicación asíncrona con el servidor.
+                Este objeto posee métodos y propiedades que nos permiten configurar y enviar la solicitud HTTP, así como gestionar la respuesta.
+                <br>var xhr = new XMLHttpRequest();<br>crea una instancia del objeto XMLHttpRequest.
+                <br><br><li>2-Configuración de la petición:</li><br>Una vez creado el objeto,
+                 el siguiente paso es configurarlo con el método open(),
+                definir los headers necesarios con setRequestHeader(),
+                y posteriormente enviar la petición con send(). 
+                La respuesta se puede controlar mediante la propiedad 
+                onreadystatechange o utilizando enfoques modernos como la API fetch()<br><br>
+
+    <textarea id="bienFo">
+                                        // Configuración de la petición: método GET, URL de destino y asíncrono
+                    xhr.open("GET", "ejemplo.php", true);
+
+                    // Definir una función que maneje los cambios de estado de la petición
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) { // La petición ha finalizado
+                            if (xhr.status === 200) { // Respuesta exitosa
+                                console.log("Respuesta recibida:", xhr.responseText);
+                                // Aquí se puede actualizar la interfaz del usuario
+                            } else {
+                                console.error("Error en la petición:", xhr.statusText);
+                            }
+                        }
+                    };
+
+
+                </textarea>
+                <li>3-Envío de la petición:</li>El envío de la petición es el paso en el que, una vez configurado el objeto XMLHttpRequest 
+                se manda la solicitud efectivamente al servidor.Esto se hace mediante el método send() del objeto, el cual puede enviar información adicional en el cuerpo de la petición, dependiendo del método HTTP que estés utilizando.
+               <br> <br>Uso Básico con GET:<br>Simplemente se invoca send() sin argumentos (o con null), y la petición se envía de forma asíncrona si se configuró así. Aquí un ejemplo sencillo:
+                <br><br>
+                <textarea id="bienFo">
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) { // La petición se ha completado
+                        if (xhr.status === 200) { // Respuesta exitosa
+                            console.log("Respuesta recibida:", xhr.responseText);
+                        } else {
+                            console.error("Error en la petición:", xhr.statusText);
+                        }
+                    }
+                };
+            
+                // Envío de la petición sin datos en el cuerpo
+                xhr.send();</textarea>
+                <br><br>
+
+                Uso Básico con POST<br>Para una solicitud POST,
+                 se necesitas enviar datos al servidor 
+                 (parámetros, formularios, etc.). podras configurar 
+                 los encabezados HTTP adecuados, como el <b>Content-Type</b>,
+                  para informar al servidor del formato de los datos enviados.
+                <textarea id="bienFo">
+                    ar xhr = new XMLHttpRequest();
+                    xhr.open("POST", "ejemplo.php", true);
+
+                    // Configuramos el encabezado para informar que se envían datos en formato URL-encoded
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                console.log("Respuesta recibida:", xhr.responseText);
+                            } else {
+                                console.error("Error en la petición:", xhr.statusText);
+                            }
+                        }
+                    };
+
+                    // Datos a enviar, en este caso, se envían como una cadena URL-encoded
+                    var datos = "param1=valor1&param2=valor2";
+
+                    // Envío de la petición con los datos en el cuerpo
+                    xhr.send(datos);
+
+                </textarea>
+                
+               <li>4-Manejo de la respuesta:</li> <b>Estados de la Petición</b><br>El manejo de la respuesta es un paso crucial en una petición AJAX, ya que permite interpretar la información que devuelve el servidor y actualizar el contenido de la página en consecuencia<br>
+               como lo hace:<br>El objeto XMLHttpRequest actualiza la propiedad readyState en cada fase de la solicitud
+                <br>Los valores significan lo siguiente:<br> 0: No inicializado<br>1: Conexión establecida
+                <br>2: Petición recibida<br>3: Procesando<br>4: Completado<br><b>Comprobación del Código de Estado</b>
+                <br>Una vez que readyState es 4, se debe comprobar el código de estado HTTP (almacenado en status):
+                <br>200: La petición fue exitosa y se recibió la respuesta correctamente
+                <br>404, 500, etc   indican que se ha producido un error.
+                <br><br>
+                Ejemplos:<br>
+                <textarea  id="bienFo">
+                    var xhr = new XMLHttpRequest();
+                        xhr.open("GET", "ejemplo.php", true); // Configura la petición
+
+                        xhr.onreadystatechange = function () {
+                            // Verifica que la petición se haya completado
+                            if (xhr.readyState === 4) {
+                                if (xhr.status === 200) {
+                                    // La petición fue exitosa.
+                                    // En este caso, se asume que el servidor retorna texto.
+                                    var respuesta = xhr.responseText;
+                                    console.log("Respuesta recibida:", respuesta);
+
+                                    // Si el contenido viene en formato JSON, se puede convertir a objeto:
+                                    try {
+                                        var datos = JSON.parse(respuesta);
+                                        console.log("Datos procesados:", datos);
+                                    } catch (error) {
+                                        console.error("No se pudo parsear JSON:", error);
+                                    }
+                                } else {
+                                    // Se maneja el error en caso de que el estatus no sea 200.
+                                    console.error("Error en la petición:", xhr.status, xhr.statusText);
+                                }
+                            }
+                        };
+
+                        // Envía la petición al servidor
+                        xhr.send();
+
+                                        </textarea> 
+
+            <li>5- Actualización de la interfaz:</li>La actualización de la interfaz es el paso en el que, tras recibir la información del servidor, se reflejan los cambios en la página para que el usuario vea de inmediato los nuevos datos o la modificación de contenido. Se trata de manipular el DOM (Document Object Model) de forma dinámica sin recargar toda la página
+            <br><br><b>Estrategias para Actualizar la Interfaz</b><br><br>Una vez se recibe la respuesta, se identifica el elemento o contenedor en el que queremos mostrar la nueva información. Por ejemplo, se puede usar document.getElementById, document.querySelector o métodos similares para seleccionar el elemento y actualizar su propiedad innerHTML o textContent.
+<br>    
+        <textarea  id="bienFo">
+            var contenedor = document.getElementById("resultado");
+        // Mostrar un mensaje de carga
+        contenedor.innerHTML = '<p>Cargando información...</p>';
+
+        </textarea>
+
+
+
+
+
+
+                
+            </p>
+            
+        </p>
+        <a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+    </section>
+    <section id="Ejemplos">
+        <h2>Ejemplos</h2>
+
+        <textarea id="bien">
+            <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Sencillo de AJAX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo Sencillo de AJAX</h1>
+  <p id="resultado">Haz click en el botón para cargar datos.</p>
+  <button id="cargar">Cargar Datos</button>
+
+  <script>
+    document.getElementById("cargar").addEventListener("click", function() {
+      // Crear el objeto XMLHttpRequest para la comunicación asíncrona
+      var xhr = new XMLHttpRequest();
+      
+      // Configurar la petición: método GET, recurso 'datos.txt' y de forma asíncrona
+      xhr.open("GET", "datos.txt", true);
+      
+      // Definir la función que maneja los cambios en el estado de la petición
+      xhr.onreadystatechange = function() {
+          // readyState 4 indica que la petición se completó
+          if (xhr.readyState === 4) {
+              // Comprobamos si el estado HTTP es 200 (éxito)
+              if (xhr.status === 200) {
+                  // Actualizamos el contenido del elemento con id "resultado"
+                  document.getElementById("resultado").innerText = xhr.responseText;
+              } else {
+                  // En caso de error se muestra un mensaje alternativo
+                  document.getElementById("resultado").innerText = "Error al cargar los datos.";
+              }
+          }
+      };
+      
+      // Enviar la petición al servidor
+      xhr.send();
+    });
+  </script>
+</body>
+</html>
+
+        </textarea>
+    </section>
+   
+</main>
+<a href="#" id="arriba" class="bi bi-arrow-bar-up">volver Menu</a>
+
+  
+<footer>
+  
+</footer>
+
+</body>
+</html>
